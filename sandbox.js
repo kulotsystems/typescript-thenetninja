@@ -1,37 +1,24 @@
-// explicit types
-var character;
-var age;
-var isLoggedIn;
-// age = 'luigi';
-age = 30;
-// isLoggedIn = 25;
-isLoggedIn = true;
-// arrays
-var ninjas = []; // it's best to initialize with empty array
-// ninjas = [10, 23];
-ninjas = ['yoshi', 'mario'];
-ninjas.push('shaun');
-// union types
+var age = 25;
+age = true;
+age = 'hello';
+console.log(age);
+age = {
+    name: 'luigi'
+};
+console.log(age);
 var mixed = [];
-mixed.push('hello');
-mixed.push(20);
+mixed.push(5);
+mixed.push('mario');
 mixed.push(false);
 console.log(mixed);
-var uid; // no need of parenthesis for normal variables
-uid = '123';
-uid = 123;
-// uid = false;
-// objects
-var ninjaOne;
-ninjaOne = {
+var ninja;
+ninja = {
     name: 'yoshi',
-    age: 30
+    age: 25
 };
-// ninjaOne = 'hello';
-// declare types of properties
-var ninjaTwo;
-ninjaTwo = {
-    name: 'mario',
-    age: 20,
-    beltColour: 'black'
+console.log(ninja);
+ninja = {
+    name: 25,
+    age: 'yoshi'
 };
+console.log(ninja);
