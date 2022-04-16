@@ -17,42 +17,33 @@ const amount  = document.querySelector('#amount') as HTMLInputElement;
 
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
+
+    let values: [string, string, number];
+    values = [tofrom.value, details.value, amount.valueAsNumber];
+
     let doc: HasFormatter;
     if(type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber)
+        doc = new Payment(...values);
     }
 
     list.render(doc, type.value, 'end');
 });
 
-// ENUMS
-enum ResourceType {
-    BOOK, AUTHOR, FILM, DIRECTOR, PERSON
-}
 
-interface Resource<T> {
-    uid: number;
-    resourceType: number;
-    data: T;
-}
+// normal mixed array
+let arr = ['ryu', 25, true];
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi'];
 
-const docOne: Resource<object> = {
-    uid: 1,
-    resourceType: ResourceType.AUTHOR,
-    data: {
-        title: 'name of the wind'
-    }
-}
 
-const docTwo: Resource<object> = {
-    uid: 10,
-    resourceType: ResourceType.PERSON,
-    data: {
-        name: 'yoshi'
-    }
-}
+// tuples
+let tup: [string, number, boolean] = ['ryu', 25, true];
+tup[0] = 'ken';
+tup[1] = 30;
 
-console.log(docOne, docTwo);
+let student: [string, number];
+student = ['chun-li', 123456];
