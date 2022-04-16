@@ -1,8 +1,4 @@
 export class Invoice {
-    // readonly client : string;
-    // private details: string;
-    // public  amount : number;
-    /* modifiers are required for this shorthand */
     constructor(client, details, amount) {
         this.client = client;
         this.details = details;
